@@ -19,7 +19,7 @@
 
       <nav class="nav" aria-label="Primary navigation">
         <a href="#about">关于</a>
-        <a href="#women-perfumes">女用香水</a>
+        <a href="#catalog">目录</a>
         <a href="#contact">联系</a>
       </nav>
     </header>
@@ -57,16 +57,16 @@
         </div>
       </section>
 
-      <section class="collection section" aria-label="Selected images">
+      <section class="collection section" id="catalog" aria-label="Product catalog">
         <div class="feature-grid">
-          <article class="feature-card reveal">
+          <a class="feature-card reveal" href="#watch-categories" data-show-section="watch-categories">
             <img src="relojes/图片_20260613123425_183_14.jpg" alt="A curated display of watches and leather accessories.">
             <div class="feature-body">
               <h3>腕表</h3>
             </div>
-          </article>
+          </a>
 
-          <a class="feature-card reveal" href="#women-perfumes">
+          <a class="feature-card reveal" href="#perfume-categories" data-show-section="perfume-categories">
             <img src="pefumes/图片_20260613123423_181_14.jpg" alt="A perfume bottle on richly colored textile with accessories.">
             <div class="feature-body">
               <h3>香氛</h3>
@@ -76,13 +76,68 @@
           <article class="feature-card reveal">
             <img src="图片_20260613123424_182_14.jpg" alt="A polished desk with technology accessories.">
             <div class="feature-body">
-              <h3>数码</h3>
+              <h3>眼镜</h3>
             </div>
           </article>
         </div>
       </section>
 
-      <section class="perfume-gallery section" id="women-perfumes" aria-label="Women's perfume gallery">
+      <section class="category-section section is-hidden" id="watch-categories" aria-label="Watch categories" hidden>
+        <div class="gallery-heading">
+          <div>
+            <h2>腕表分类</h2>
+          </div>
+          <p>
+            请选择男士手表或女士手表。
+          </p>
+        </div>
+
+        <div class="category-grid">
+          <article class="category-card reveal">
+            <img src="relojes/图片_20260613123425_183_14.jpg" alt="Men's watches category.">
+            <div class="feature-body">
+              <h3>男士手表</h3>
+            </div>
+          </article>
+
+          <article class="category-card reveal">
+            <img src="relojes/图片_20260613123425_183_14.jpg" alt="Women's watches category.">
+            <div class="feature-body">
+              <h3>女士手表</h3>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="category-section section is-hidden" id="perfume-categories" aria-label="Perfume categories" hidden>
+        <div class="gallery-heading">
+          <div>
+            <h2>香水分类</h2>
+          </div>
+          <p>
+            请选择女用香水或男士香水。
+          </p>
+        </div>
+
+        <div class="category-grid">
+          <a class="category-card reveal" href="#women-perfumes" data-show-section="women-perfumes">
+            <img src="pefumes/perfumes de mujer/图片_20260614212539_187_14.jpg" alt="Women's perfume category.">
+            <div class="feature-body">
+              <h3>女用香水</h3>
+              <p>$15900</p>
+            </div>
+          </a>
+
+          <article class="category-card reveal">
+            <img src="pefumes/图片_20260613123423_181_14.jpg" alt="Men's perfume category.">
+            <div class="feature-body">
+              <h3>男士香水</h3>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="perfume-gallery section is-hidden" id="women-perfumes" aria-label="Women's perfume gallery" hidden>
         <div class="gallery-heading">
           <div>
             <h2>女用香水</h2>
