@@ -1,7 +1,7 @@
 const header = document.querySelector("[data-header]");
 const revealItems = document.querySelectorAll(".reveal");
 const sectionTriggers = document.querySelectorAll("[data-show-section]");
-const toggleSections = document.querySelectorAll("#watch-categories, #perfume-categories, #women-perfumes");
+const toggleSections = document.querySelectorAll("#watch-categories, #perfume-categories, #women-perfumes, #men-perfumes");
 
 const updateHeader = () => {
   header.classList.toggle("is-scrolled", window.scrollY > 20);
