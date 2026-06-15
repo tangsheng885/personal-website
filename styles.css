@@ -317,15 +317,15 @@ h3 {
   border: 1px solid rgba(207, 151, 151, 0.34);
   border-left: 4px solid rgba(184, 95, 112, 0.5);
   border-radius: 8px;
-  color: #714451;
+  color: #7d4051;
   background:
     linear-gradient(120deg, rgba(255, 252, 247, 0.91), rgba(255, 242, 239, 0.74)),
     url("assets/romantic-floral-bg.webp") center / cover;
-  font-family: "Cormorant Garamond", "Playfair Display", Georgia, "Times New Roman", serif;
-  font-size: 20px;
+  font-family: "Dancing Script", "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(24px, 2.05vw, 31px);
   font-style: normal;
-  font-weight: 500;
-  line-height: 1.82;
+  font-weight: 600;
+  line-height: 1.38;
   box-shadow: 0 18px 44px rgba(143, 95, 106, 0.16);
 }
 
@@ -341,15 +341,15 @@ h3 {
 
 .romantic-copy p {
   position: relative;
-  margin: 0 0 12px;
+  margin: 0 0 16px;
+  text-shadow: 0 8px 24px rgba(125, 64, 81, 0.1);
 }
 
 .romantic-copy p:first-child {
   color: #a8455e;
-  font-family: "Dancing Script", "Cormorant Garamond", Georgia, serif;
-  font-size: clamp(31px, 3.2vw, 42px);
+  font-size: clamp(38px, 4vw, 54px);
   font-weight: 700;
-  line-height: 1.08;
+  line-height: 1;
   text-shadow: 0 10px 26px rgba(168, 69, 94, 0.16);
 }
 
