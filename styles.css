@@ -308,6 +308,25 @@ h3 {
   font-size: 18px;
 }
 
+.perfume-heading-title {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.perfume-heading-floral {
+  width: min(100%, 560px);
+  height: clamp(104px, 14vw, 164px);
+  margin-bottom: clamp(10px, 2vw, 18px);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(247, 244, 238, 0.08), rgba(247, 244, 238, 0.62)),
+    url("assets/perfume-heading-floral.webp") top center / cover no-repeat;
+  opacity: 0.76;
+  filter: saturate(0.86);
+}
+
 .romantic-copy {
   position: relative;
   isolation: isolate;
