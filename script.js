@@ -46,29 +46,30 @@ const playRomanticPhrase = () => {
 
   const now = audioContext.currentTime;
   const melody = [
-    659.25, 622.25, 659.25, 622.25, 659.25, 493.88, 587.33, 523.25, 440.0,
-    261.63, 329.63, 440.0, 493.88, 329.63, 415.3, 493.88, 523.25, 329.63,
-    659.25, 622.25, 659.25, 622.25, 659.25, 493.88, 587.33, 523.25, 440.0,
+    523.25, 587.33, 659.25, 783.99,
+    739.99, 659.25, 587.33, 659.25,
+    698.46, 783.99, 880.0, 783.99,
+    659.25, 587.33, 523.25, 587.33,
   ];
   const chords = [
+    [261.63, 329.63, 392.0],
     [220.0, 261.63, 329.63],
-    [164.81, 246.94, 329.63],
-    [196.0, 246.94, 293.66],
-    [220.0, 261.63, 329.63],
+    [174.61, 261.63, 349.23],
+    [196.0, 293.66, 392.0],
   ];
 
   chords.forEach((chord, chordIndex) => {
-    const chordStart = now + chordIndex * 2.6;
-    playPianoNote(chord[0], chordStart, 2.7, 0.012);
+    const chordStart = now + chordIndex * 2.4;
+    playPianoNote(chord[0], chordStart, 2.5, 0.011);
     chord.forEach((note, noteIndex) => {
-      playPianoNote(note, chordStart + 0.24 + noteIndex * 0.2, 1.9, 0.01);
+      playPianoNote(note, chordStart + 0.26 + noteIndex * 0.34, 1.8, 0.009);
     });
   });
 
   melody.forEach((note, index) => {
-    const start = now + index * 0.28;
-    const isLandingNote = index === 8 || index === 17 || index === 26;
-    playPianoNote(note, start, isLandingNote ? 1.4 : 0.62, isLandingNote ? 0.026 : 0.021);
+    const start = now + index * 0.56;
+    const isLandingNote = index === 3 || index === 7 || index === 11 || index === 15;
+    playPianoNote(note, start, isLandingNote ? 1.35 : 0.9, isLandingNote ? 0.021 : 0.017);
   });
 };
 
@@ -80,7 +81,7 @@ const startRomanticMusic = async () => {
   musicToggle.setAttribute("aria-pressed", "true");
   musicToggle.textContent = "Pausar musica";
   playRomanticPhrase();
-  musicTimer = window.setInterval(playRomanticPhrase, 8200);
+  musicTimer = window.setInterval(playRomanticPhrase, 9600);
 };
 
 const stopRomanticMusic = () => {
