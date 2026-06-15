@@ -315,7 +315,7 @@ h3 {
 .perfume-heading-title {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .perfume-heading-floral {
