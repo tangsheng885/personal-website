@@ -302,6 +302,10 @@ h3 {
   margin-bottom: clamp(24px, 4vw, 42px);
 }
 
+#perfume-categories > .gallery-heading {
+  display: block;
+}
+
 .gallery-heading p {
   margin-bottom: 24px;
   color: var(--muted);
@@ -309,16 +313,15 @@ h3 {
 }
 
 .perfume-heading-title {
-  align-self: stretch;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  align-items: flex-start;
 }
 
 .perfume-heading-floral {
-  width: min(100%, 560px);
-  height: clamp(104px, 14vw, 164px);
-  margin-bottom: clamp(10px, 2vw, 18px);
+  width: min(100%, 980px);
+  height: clamp(132px, 18vw, 210px);
+  margin-bottom: clamp(12px, 2vw, 20px);
   border-radius: 8px;
   background:
     linear-gradient(180deg, rgba(247, 244, 238, 0.08), rgba(247, 244, 238, 0.62)),
@@ -331,8 +334,10 @@ h3 {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  max-width: 520px;
-  padding: 26px 28px 24px;
+  width: min(100%, 840px);
+  max-width: none;
+  margin-bottom: clamp(22px, 3vw, 32px);
+  padding: 24px clamp(22px, 4vw, 42px) 22px;
   border: 1px solid rgba(207, 151, 151, 0.34);
   border-left: 4px solid rgba(184, 95, 112, 0.5);
   border-radius: 8px;
