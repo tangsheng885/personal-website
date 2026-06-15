@@ -11,18 +11,32 @@ const updateHeader = () => {
   header.classList.toggle("is-scrolled", window.scrollY > 20);
 };
 
-const playTone = (frequency, startTime, duration, volume = 0.035, type = "sine") => {
-  const oscillator = audioContext.createOscillator();
+const playPianoNote = (frequency, startTime, duration, volume = 0.035) => {
+  const main = audioContext.createOscillator();
+  const overtone = audioContext.createOscillator();
+  const filter = audioContext.createBiquadFilter();
   const gain = audioContext.createGain();
 
-  oscillator.type = type;
-  oscillator.frequency.setValueAtTime(frequency, startTime);
+  main.type = "triangle";
+  overtone.type = "sine";
+  main.frequency.setValueAtTime(frequency, startTime);
+  overtone.frequency.setValueAtTime(frequency * 2.01, startTime);
+  filter.type = "lowpass";
+  filter.frequency.setValueAtTime(1800, startTime);
+  filter.frequency.exponentialRampToValueAtTime(620, startTime + duration);
+
   gain.gain.setValueAtTime(0.0001, startTime);
-  gain.gain.exponentialRampToValueAtTime(volume, startTime + 0.04);
+  gain.gain.exponentialRampToValueAtTime(volume, startTime + 0.015);
+  gain.gain.exponentialRampToValueAtTime(volume * 0.22, startTime + 0.28);
   gain.gain.exponentialRampToValueAtTime(0.0001, startTime + duration);
-  oscillator.connect(gain).connect(audioContext.destination);
-  oscillator.start(startTime);
-  oscillator.stop(startTime + duration + 0.05);
+
+  main.connect(filter);
+  overtone.connect(filter);
+  filter.connect(gain).connect(audioContext.destination);
+  main.start(startTime);
+  overtone.start(startTime);
+  main.stop(startTime + duration + 0.05);
+  overtone.stop(startTime + duration + 0.05);
 };
 
 const playRomanticPhrase = () => {
@@ -35,23 +49,34 @@ const playRomanticPhrase = () => {
     659.25,
     783.99,
     880.0,
+    987.77,
+    880.0,
     783.99,
     659.25,
     587.33,
-    523.25,
+    659.25,
+    783.99,
+    698.46,
     659.25,
   ];
-  const bassNotes = [261.63, 220.0, 246.94, 196.0];
+  const chords = [
+    [261.63, 329.63, 392.0],
+    [220.0, 329.63, 440.0],
+    [246.94, 349.23, 440.0],
+    [196.0, 293.66, 392.0],
+  ];
 
-  bassNotes.forEach((note, index) => {
-    playTone(note, now + index * 1.8, 2.1, 0.012, "sine");
-    playTone(note * 1.5, now + index * 1.8 + 0.12, 1.8, 0.008, "sine");
+  chords.forEach((chord, chordIndex) => {
+    const chordStart = now + chordIndex * 2.1;
+    playPianoNote(chord[0], chordStart, 2.2, 0.014);
+    chord.forEach((note, noteIndex) => {
+      playPianoNote(note, chordStart + 0.2 + noteIndex * 0.18, 1.7, 0.012);
+    });
   });
 
   melody.forEach((note, index) => {
-    const start = now + index * 0.45;
-    playTone(note, start, 0.72, 0.018, "triangle");
-    playTone(note * 2, start + 0.03, 0.38, 0.006, "sine");
+    const start = now + index * 0.52;
+    playPianoNote(note, start, 1.05, 0.022);
   });
 };
 
@@ -63,7 +88,7 @@ const startRomanticMusic = async () => {
   musicToggle.setAttribute("aria-pressed", "true");
   musicToggle.textContent = "Pausar musica";
   playRomanticPhrase();
-  musicTimer = window.setInterval(playRomanticPhrase, 7200);
+  musicTimer = window.setInterval(playRomanticPhrase, 8600);
 };
 
 const stopRomanticMusic = () => {
