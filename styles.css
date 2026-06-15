@@ -308,6 +308,25 @@ h3 {
   font-size: 18px;
 }
 
+.romantic-copy {
+  max-width: 520px;
+  color: #8f5f6a;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  font-style: italic;
+  line-height: 1.72;
+}
+
+.romantic-copy p {
+  margin: 0 0 12px;
+}
+
+.romantic-copy p:first-child {
+  color: var(--coral);
+  font-size: 22px;
+  font-weight: 700;
+}
+
 .perfume-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
