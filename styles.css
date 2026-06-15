@@ -267,6 +267,13 @@ h3 {
   padding: 18px 20px;
 }
 
+.price {
+  margin: 0;
+  color: var(--coral);
+  font-size: 20px;
+  font-weight: 900;
+}
+
 .perfume-gallery {
   padding-top: clamp(52px, 7vw, 92px);
 }

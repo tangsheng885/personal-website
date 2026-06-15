@@ -19,7 +19,7 @@
 
       <nav class="nav" aria-label="Primary navigation">
         <a href="#about">关于</a>
-        <a href="#women-perfumes">女用香水</a>
+        <a href="#perfume-categories">香水</a>
         <a href="#contact">联系</a>
       </nav>
     </header>
@@ -66,30 +66,61 @@
             </div>
           </article>
 
-          <a class="feature-card reveal" href="#women-perfumes">
+          <a class="feature-card reveal" href="#perfume-categories" data-show-perfumes>
             <img src="pefumes/图片_20260613123423_181_14.jpg" alt="A perfume bottle on richly colored textile with accessories.">
             <div class="feature-body">
               <h3>香氛</h3>
+              <p class="price">$15900</p>
             </div>
           </a>
 
           <article class="feature-card reveal">
             <img src="图片_20260613123424_182_14.jpg" alt="A polished desk with technology accessories.">
             <div class="feature-body">
-              <h3>数码</h3>
+              <h3>眼镜</h3>
             </div>
           </article>
         </div>
       </section>
 
-      <section class="perfume-gallery section" id="women-perfumes" aria-label="Women's perfume gallery">
+      <section class="perfume-categories section is-hidden" id="perfume-categories" aria-label="Perfume categories" hidden>
+        <div class="gallery-heading">
+          <div>
+            <div class="section-label">Perfumes</div>
+            <h2>香水分类</h2>
+          </div>
+          <p>
+            请选择女士香水或男士香水。
+          </p>
+        </div>
+
+        <div class="perfume-category-grid">
+          <a class="perfume-category-card reveal" href="#women-perfumes" data-show-women-perfumes>
+            <img src="pefumes/perfumes de mujer/图片_20260614212539_187_14.jpg" alt="Women's perfume category.">
+            <div class="feature-body">
+              <h3>女士香水</h3>
+              <p class="price">$15900</p>
+            </div>
+          </a>
+
+          <a class="perfume-category-card reveal" href="#men-perfumes" data-show-men-perfumes>
+            <img src="pefumes/图片_20260613123423_181_14.jpg" alt="Men's perfume category.">
+            <div class="feature-body">
+              <h3>男士香水</h3>
+              <p class="price">$15900</p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section class="perfume-gallery section is-hidden" id="women-perfumes" aria-label="Women's perfume gallery" hidden>
         <div class="gallery-heading">
           <div>
             <div class="section-label">Perfumes</div>
             <h2>女用香水</h2>
           </div>
           <p>
-            精选香水图片展示。
+            精选香水图片展示。价格：$15900。
           </p>
         </div>
 
@@ -114,6 +145,24 @@
           </article>
           <article class="perfume-item reveal">
             <img src="pefumes/perfumes de mujer/图片_20260614212546_192_14.jpg" alt="Women's perfume product presentation.">
+          </article>
+        </div>
+      </section>
+
+      <section class="perfume-gallery section is-hidden" id="men-perfumes" aria-label="Men's perfume gallery" hidden>
+        <div class="gallery-heading">
+          <div>
+            <div class="section-label">Perfumes</div>
+            <h2>男士香水</h2>
+          </div>
+          <p>
+            男士香水图片展示。价格：$15900。
+          </p>
+        </div>
+
+        <div class="perfume-grid perfume-grid-compact">
+          <article class="perfume-item perfume-item-large reveal">
+            <img src="pefumes/图片_20260613123423_181_14.jpg" alt="Men's perfume product display.">
           </article>
         </div>
       </section>
