@@ -18,7 +18,7 @@ const playTone = (frequency, startTime, duration, volume = 0.035, type = "sine")
   oscillator.type = type;
   oscillator.frequency.setValueAtTime(frequency, startTime);
   gain.gain.setValueAtTime(0.0001, startTime);
-  gain.gain.exponentialRampToValueAtTime(volume, startTime + 0.08);
+  gain.gain.exponentialRampToValueAtTime(volume, startTime + 0.04);
   gain.gain.exponentialRampToValueAtTime(0.0001, startTime + duration);
   oscillator.connect(gain).connect(audioContext.destination);
   oscillator.start(startTime);
@@ -31,17 +31,27 @@ const playRomanticPhrase = () => {
   }
 
   const now = audioContext.currentTime;
-  const chords = [
-    [261.63, 329.63, 392.0],
-    [220.0, 329.63, 440.0],
-    [246.94, 293.66, 392.0],
-    [196.0, 293.66, 392.0],
+  const melody = [
+    659.25,
+    783.99,
+    880.0,
+    783.99,
+    659.25,
+    587.33,
+    523.25,
+    659.25,
   ];
+  const bassNotes = [261.63, 220.0, 246.94, 196.0];
 
-  chords.forEach((chord, index) => {
-    const start = now + index * 1.2;
-    chord.forEach((note) => playTone(note, start, 1.5, 0.018));
-    playTone(chord[2] * 2, start + 0.55, 0.55, 0.02, "triangle");
+  bassNotes.forEach((note, index) => {
+    playTone(note, now + index * 1.8, 2.1, 0.012, "sine");
+    playTone(note * 1.5, now + index * 1.8 + 0.12, 1.8, 0.008, "sine");
+  });
+
+  melody.forEach((note, index) => {
+    const start = now + index * 0.45;
+    playTone(note, start, 0.72, 0.018, "triangle");
+    playTone(note * 2, start + 0.03, 0.38, 0.006, "sine");
   });
 };
 
@@ -53,7 +63,7 @@ const startRomanticMusic = async () => {
   musicToggle.setAttribute("aria-pressed", "true");
   musicToggle.textContent = "Pausar musica";
   playRomanticPhrase();
-  musicTimer = window.setInterval(playRomanticPhrase, 4800);
+  musicTimer = window.setInterval(playRomanticPhrase, 7200);
 };
 
 const stopRomanticMusic = () => {
