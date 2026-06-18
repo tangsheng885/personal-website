@@ -277,8 +277,6 @@ h3 {
 }
 
 .price {
-  display: inline-flex;
-  align-items: baseline;
   white-space: nowrap;
 }
 
