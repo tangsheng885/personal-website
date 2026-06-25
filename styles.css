@@ -289,6 +289,18 @@ h3 {
   font-weight: 900;
 }
 
+.shipping-note {
+  display: inline-flex;
+  margin-top: 8px;
+  border-radius: 999px;
+  padding: 5px 10px;
+  color: var(--teal);
+  background: rgba(23, 102, 107, 0.1);
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
 .is-hidden {
   display: none;
 }
