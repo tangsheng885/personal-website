@@ -305,9 +305,16 @@
 
     <div class="image-lightbox" data-lightbox hidden>
       <button class="lightbox-close" type="button" data-lightbox-close aria-label="Close enlarged image">×</button>
-      <img data-lightbox-image src="" alt="">
+      <div class="lightbox-stage">
+        <img data-lightbox-image src="" alt="">
+      </div>
+      <div class="lightbox-tools" aria-label="Image zoom controls">
+        <button type="button" data-zoom-out aria-label="Zoom out">-</button>
+        <button type="button" data-zoom-reset>100%</button>
+        <button type="button" data-zoom-in aria-label="Zoom in">+</button>
+      </div>
     </div>
 
-    <script src="script.js?v=image-lightbox-1"></script>
+    <script src="script.js?v=image-zoom-1"></script>
   </body>
 </html>

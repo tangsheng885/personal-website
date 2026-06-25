@@ -7,11 +7,15 @@ const galleryImages = document.querySelectorAll(".perfume-grid img");
 const lightbox = document.querySelector("[data-lightbox]");
 const lightboxImage = document.querySelector("[data-lightbox-image]");
 const lightboxClose = document.querySelector("[data-lightbox-close]");
+const zoomInButton = document.querySelector("[data-zoom-in]");
+const zoomOutButton = document.querySelector("[data-zoom-out]");
+const zoomResetButton = document.querySelector("[data-zoom-reset]");
 const romanticAudio = new Audio("assets/soft-romantic-piano.wav?v=soft-audio-1");
 romanticAudio.loop = true;
 romanticAudio.preload = "auto";
 romanticAudio.volume = 0.58;
 let isMusicPlaying = false;
+let lightboxZoom = 1;
 
 const updateHeader = () => {
   header.classList.toggle("is-scrolled", window.scrollY > 20);
@@ -48,11 +52,24 @@ const showSection = (sectionId) => {
   }
 };
 
+const applyLightboxZoom = () => {
+  if (!lightboxImage || !zoomResetButton) return;
+
+  lightboxImage.style.setProperty("--zoom", lightboxZoom.toFixed(2));
+  zoomResetButton.textContent = `${Math.round(lightboxZoom * 100)}%`;
+};
+
+const setLightboxZoom = (zoom) => {
+  lightboxZoom = Math.min(Math.max(zoom, 1), 3);
+  applyLightboxZoom();
+};
+
 const openLightbox = (image) => {
   if (!lightbox || !lightboxImage) return;
 
   lightboxImage.src = image.currentSrc || image.src;
   lightboxImage.alt = image.alt;
+  setLightboxZoom(1);
   lightbox.hidden = false;
   document.body.classList.add("lightbox-open");
 };
@@ -63,6 +80,7 @@ const closeLightbox = () => {
   lightbox.hidden = true;
   lightboxImage.src = "";
   lightboxImage.alt = "";
+  setLightboxZoom(1);
   document.body.classList.remove("lightbox-open");
 };
 
@@ -114,6 +132,24 @@ if (lightbox) {
 }
 if (lightboxClose) {
   lightboxClose.addEventListener("click", closeLightbox);
+}
+if (zoomInButton) {
+  zoomInButton.addEventListener("click", () => setLightboxZoom(lightboxZoom + 0.25));
+}
+if (zoomOutButton) {
+  zoomOutButton.addEventListener("click", () => setLightboxZoom(lightboxZoom - 0.25));
+}
+if (zoomResetButton) {
+  zoomResetButton.addEventListener("click", () => setLightboxZoom(1));
+}
+if (lightbox) {
+  lightbox.addEventListener("wheel", (event) => {
+    if (lightbox.hidden) return;
+
+    event.preventDefault();
+    const zoomStep = event.deltaY < 0 ? 0.15 : -0.15;
+    setLightboxZoom(lightboxZoom + zoomStep);
+  }, { passive: false });
 }
 window.addEventListener("keydown", (event) => {
   if (event.key === "Escape" && lightbox && !lightbox.hidden) {
