@@ -1,7 +1,7 @@
 const header = document.querySelector("[data-header]");
 const revealItems = document.querySelectorAll(".reveal");
 const sectionTriggers = document.querySelectorAll("[data-show-section]");
-const toggleSections = document.querySelectorAll("#watch-categories, #perfume-categories, #women-perfumes, #men-perfumes");
+const toggleSections = document.querySelectorAll("#watch-categories, #women-watches, #kids-watches, #perfume-categories, #women-perfumes, #men-perfumes");
 const musicToggle = document.querySelector("[data-music-toggle]");
 const romanticAudio = new Audio("assets/soft-romantic-piano.wav?v=soft-audio-1");
 romanticAudio.loop = true;
