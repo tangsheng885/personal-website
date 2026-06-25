@@ -14,6 +14,7 @@
 
 * {
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html {
@@ -36,6 +37,12 @@ img {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
 }
 
 .site-header {
@@ -253,6 +260,12 @@ h3 {
   transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
+.feature-card:active,
+.category-card:active {
+  color: inherit;
+  background: var(--paper-strong);
+}
+
 .feature-card:hover,
 .category-card:hover {
   transform: translateY(-3px);
@@ -412,6 +425,11 @@ h3 {
   gap: 14px;
 }
 
+#women-watches .perfume-grid,
+#kids-watches .perfume-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .perfume-item {
   overflow: hidden;
   border: 1px solid rgba(23, 25, 28, 0.1);
@@ -441,6 +459,11 @@ h3 {
   transform: scale(1.035);
 }
 
+#women-watches .perfume-item img,
+#kids-watches .perfume-item img {
+  aspect-ratio: 3 / 4;
+}
+
 .image-lightbox {
   position: fixed;
   z-index: 60;
@@ -467,14 +490,14 @@ h3 {
 }
 
 .lightbox-stage img {
-  max-width: min(100%, 1100px);
-  max-height: 82vh;
+  width: auto;
+  height: calc(78vh * var(--zoom, 1));
+  max-width: none;
+  max-height: none;
   border-radius: 8px;
   object-fit: contain;
   box-shadow: 0 28px 90px rgba(0, 0, 0, 0.42);
-  transform: scale(var(--zoom, 1));
-  transform-origin: center;
-  transition: transform 160ms ease;
+  transition: height 160ms ease;
 }
 
 .lightbox-close,
@@ -618,6 +641,11 @@ body.lightbox-open {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  #women-watches .perfume-grid,
+  #kids-watches .perfume-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .perfume-item-large {
     grid-column: span 2;
   }
@@ -643,6 +671,11 @@ body.lightbox-open {
   }
 
   .perfume-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #women-watches .perfume-grid,
+  #kids-watches .perfume-grid {
     grid-template-columns: 1fr;
   }
 
