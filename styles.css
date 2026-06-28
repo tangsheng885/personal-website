@@ -74,19 +74,38 @@ button:focus-visible {
 }
 
 .brand {
-  gap: 10px;
+  gap: 12px;
   font-weight: 800;
   letter-spacing: 0;
 }
 
 .brand-mark {
   display: grid;
-  width: 42px;
-  height: 42px;
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
   place-items: center;
   border: 1px solid currentColor;
   border-radius: 50%;
+  font-size: 12px;
+}
+
+.brand-copy {
+  display: grid;
+  gap: 1px;
+  line-height: 1.1;
+}
+
+.brand-name {
+  font-size: 24px;
+  letter-spacing: 0.02em;
+}
+
+.brand-domain {
+  opacity: 0.78;
   font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
 }
 
 .nav {
@@ -759,7 +778,25 @@ body.lightbox-open {
 }
 
 @media (max-width: 560px) {
-  .brand span:last-child {
+  .site-header {
+    gap: 10px;
+  }
+
+  .brand {
+    gap: 8px;
+  }
+
+  .brand-mark {
+    width: 42px;
+    height: 42px;
+    flex-basis: 42px;
+  }
+
+  .brand-name {
+    font-size: 18px;
+  }
+
+  .brand-domain {
     display: none;
   }
 
