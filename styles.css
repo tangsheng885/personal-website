@@ -249,6 +249,51 @@ h3 {
   gap: 18px;
 }
 
+.repair-note {
+  display: flex;
+  max-width: 520px;
+  min-height: 78px;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: clamp(24px, 4vw, 38px) auto 0;
+  padding: 16px 24px;
+  border: 1px solid rgba(23, 102, 107, 0.2);
+  border-radius: 999px;
+  color: var(--teal);
+  background: rgba(255, 250, 240, 0.82);
+  box-shadow: 0 14px 34px rgba(23, 102, 107, 0.1);
+}
+
+.repair-note-icon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--paper-strong);
+  background: var(--teal);
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.repair-note div {
+  display: grid;
+  gap: 3px;
+}
+
+.repair-note strong {
+  font-size: 20px;
+  line-height: 1.1;
+}
+
+.repair-note div span {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 700;
+}
+
 .feature-card,
 .category-card {
   display: block;
@@ -668,6 +713,12 @@ body.lightbox-open {
   .feature-card img,
   .category-card img {
     aspect-ratio: 16 / 11;
+  }
+
+  .repair-note {
+    max-width: 100%;
+    justify-content: flex-start;
+    border-radius: 12px;
   }
 
   .perfume-grid {
