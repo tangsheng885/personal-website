@@ -699,6 +699,10 @@ body.lightbox-open {
   color: var(--coral);
 }
 
+.contact-email {
+  font-size: 24px;
+}
+
 .contact-link-label {
   display: inline-flex;
   min-width: 0;
@@ -817,6 +821,10 @@ body.lightbox-open {
   .whatsapp-link,
   .contact-address {
     font-size: 24px;
+  }
+
+  .contact-email {
+    font-size: 20px;
   }
 
   .repair-note {
