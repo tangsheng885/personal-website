@@ -97,13 +97,13 @@ button:focus-visible {
 }
 
 .brand-name {
-  font-size: 24px;
+  font-size: 48px;
   letter-spacing: 0.02em;
 }
 
 .brand-domain {
   opacity: 0.78;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.04em;
 }
