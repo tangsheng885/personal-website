@@ -1,7 +1,7 @@
 const header = document.querySelector("[data-header]");
 const revealItems = document.querySelectorAll(".reveal");
 const sectionTriggers = document.querySelectorAll("[data-show-section]");
-const toggleSections = document.querySelectorAll("#watch-categories, #women-watches, #kids-watches, #perfume-categories, #women-perfumes, #men-perfumes");
+const toggleSections = document.querySelectorAll("#watch-categories, #men-watches, #women-watches, #kids-watches, #perfume-categories, #women-perfumes, #men-perfumes");
 const musicToggle = document.querySelector("[data-music-toggle]");
 const galleryImages = document.querySelectorAll(".perfume-grid img");
 const lightbox = document.querySelector("[data-lightbox]");

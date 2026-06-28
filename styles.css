@@ -311,7 +311,7 @@ h3 {
 
 .category-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
 }
 
@@ -437,6 +437,7 @@ h3 {
   gap: 14px;
 }
 
+#men-watches .perfume-grid,
 #women-watches .perfume-grid,
 #kids-watches .perfume-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -471,6 +472,7 @@ h3 {
   transform: scale(1.035);
 }
 
+#men-watches .perfume-item img,
 #women-watches .perfume-item img,
 #kids-watches .perfume-item img {
   aspect-ratio: 3 / 4;
@@ -653,6 +655,7 @@ body.lightbox-open {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  #men-watches .perfume-grid,
   #women-watches .perfume-grid,
   #kids-watches .perfume-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -686,6 +689,7 @@ body.lightbox-open {
     grid-template-columns: 1fr;
   }
 
+  #men-watches .perfume-grid,
   #women-watches .perfume-grid,
   #kids-watches .perfume-grid {
     grid-template-columns: 1fr;
