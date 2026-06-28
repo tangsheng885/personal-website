@@ -699,6 +699,29 @@ body.lightbox-open {
   color: var(--coral);
 }
 
+.contact-link-label {
+  display: inline-flex;
+  min-width: 0;
+  align-items: center;
+  gap: 10px;
+}
+
+.whatsapp-icon {
+  width: 26px;
+  height: 26px;
+  flex: 0 0 26px;
+  overflow: visible;
+  fill: none;
+  stroke: #178a4b;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.65;
+}
+
+.whatsapp-link:hover .contact-link-label {
+  color: #147740;
+}
+
 .footer {
   display: flex;
   justify-content: space-between;
