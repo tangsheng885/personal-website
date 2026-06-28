@@ -684,6 +684,58 @@ body.lightbox-open {
   gap: 12px;
 }
 
+.contact-intro {
+  display: grid;
+  align-content: start;
+}
+
+.site-qr {
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  align-items: center;
+  gap: 16px;
+  margin-top: 22px;
+  padding: 12px 16px 12px 12px;
+  border: 1px solid rgba(23, 25, 28, 0.13);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.76);
+  color: var(--ink);
+  box-shadow: 0 12px 28px rgba(23, 25, 28, 0.08);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.site-qr:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px rgba(23, 25, 28, 0.13);
+}
+
+.site-qr img {
+  width: 116px;
+  height: 116px;
+  flex: 0 0 116px;
+  padding: 6px;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.site-qr span {
+  display: grid;
+  gap: 6px;
+}
+
+.site-qr strong {
+  max-width: 180px;
+  font-size: 17px;
+  line-height: 1.25;
+}
+
+.site-qr small {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+}
+
 .contact-links a {
   display: flex;
   min-height: 50px;
@@ -825,6 +877,12 @@ body.lightbox-open {
 
   .contact-email {
     font-size: 20px;
+  }
+
+  .site-qr img {
+    width: 104px;
+    height: 104px;
+    flex-basis: 104px;
   }
 
   .repair-note {

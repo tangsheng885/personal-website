@@ -60,6 +60,7 @@ const translations = {
     "contact.label": "Contacto",
     "contact.title": "Contáctame",
     "contact.copy": "Será un gusto conversar contigo.",
+    "contact.qrTitle": "Escanea y visita nuestra web",
     "footer.top": "Volver arriba",
   },
   zh: {
@@ -98,6 +99,7 @@ const translations = {
     "contact.label": "联系",
     "contact.title": "联系我",
     "contact.copy": "欢迎交流。",
+    "contact.qrTitle": "扫码访问网站",
     "footer.top": "回到顶部",
   },
 };
