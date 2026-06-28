@@ -103,7 +103,7 @@ button:focus-visible {
 
 .brand-domain {
   opacity: 0.78;
-  font-size: 26px;
+  font-size: 52px;
   font-weight: 700;
   letter-spacing: 0.04em;
 }
@@ -706,13 +706,44 @@ body.lightbox-open {
   gap: 10px;
 }
 
+.contact-link-label > span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.whatsapp-link,
+.contact-address {
+  font-size: 32px;
+  line-height: 1.25;
+}
+
+.contact-address {
+  display: flex;
+  min-height: 58px;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-weight: 800;
+}
+
 .whatsapp-icon {
-  width: 26px;
-  height: 26px;
-  flex: 0 0 26px;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
   overflow: visible;
   fill: none;
   stroke: #178a4b;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.65;
+}
+
+.address-icon {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  fill: none;
+  stroke: var(--coral);
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 1.65;
@@ -777,6 +808,15 @@ body.lightbox-open {
   .feature-card img,
   .category-card img {
     aspect-ratio: 16 / 11;
+  }
+
+  .brand-domain {
+    font-size: 26px;
+  }
+
+  .whatsapp-link,
+  .contact-address {
+    font-size: 24px;
   }
 
   .repair-note {
