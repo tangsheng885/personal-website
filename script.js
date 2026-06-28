@@ -29,12 +29,12 @@ const translations = {
     "nav.catalog": "Catálogo",
     "nav.contact": "Contacto",
     "hero.eyebrow": "Sitio personal",
-    "hero.title": "El espacio personal de Tang",
+    "hero.title": "El espacio personal de C.T.",
     "hero.copy": "Un espacio sencillo, cuidado y con personalidad.",
     "hero.about": "Conóceme",
     "hero.contact": "Contáctame",
     "about.label": "Sobre mí",
-    "about.title": "Hola, soy Tang.",
+    "about.title": "Hola, soy C.T.",
     "about.copy": "Me gustan los objetos bien diseñados, la comunicación clara y una vida con calidad.",
     "catalog.watches": "Relojes",
     "catalog.perfumes": "Perfumes",
@@ -67,12 +67,12 @@ const translations = {
     "nav.catalog": "目录",
     "nav.contact": "联系",
     "hero.eyebrow": "个人网站",
-    "hero.title": "Tang 的个人主页",
+    "hero.title": "C.T. 的个人主页",
     "hero.copy": "一个简洁、有质感的个人主页。",
     "hero.about": "了解我",
     "hero.contact": "联系我",
     "about.label": "关于",
-    "about.title": "你好，我是 Tang。",
+    "about.title": "你好，我是 C.T.。",
     "about.copy": "喜欢精致物件、清晰表达和有品质的生活方式。",
     "catalog.watches": "腕表",
     "catalog.perfumes": "香氛",
@@ -120,7 +120,7 @@ const musicLabels = () => currentLanguage === "zh"
 const applyLanguage = (language, remember = false) => {
   currentLanguage = language === "zh" ? "zh" : "es";
   document.documentElement.lang = currentLanguage === "zh" ? "zh-CN" : "es";
-  document.title = currentLanguage === "zh" ? "Tang | 个人主页" : "Tang | Sitio personal";
+  document.title = currentLanguage === "zh" ? "C.T. | 个人主页" : "C.T. | Sitio personal";
 
   translatableElements.forEach((element) => {
     const value = translations[currentLanguage][element.dataset.i18n];
