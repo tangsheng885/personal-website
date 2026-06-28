@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="es">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Tang | Personal Website</title>
+    <title>Tang | Sitio personal</title>
     <meta
       name="description"
-      content="Tang's personal website: a refined digital home for projects, taste, and selected moments."
+      content="El sitio personal de Tang: relojes, perfumes y objetos seleccionados con estilo."
     >
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,9 +21,10 @@
       </a>
 
       <nav class="nav" aria-label="Primary navigation">
-        <a href="#about">关于</a>
-        <a href="#catalog">目录</a>
-        <a href="#contact">联系</a>
+        <a href="#about" data-i18n="nav.about">Sobre mí</a>
+        <a href="#catalog" data-i18n="nav.catalog">Catálogo</a>
+        <a href="#contact" data-i18n="nav.contact">Contacto</a>
+        <button class="language-toggle" type="button" data-language-toggle aria-label="Cambiar idioma a chino" hidden>中文</button>
       </nav>
     </header>
 
@@ -36,26 +37,22 @@
         >
         <div class="hero-shade" aria-hidden="true"></div>
         <div class="hero-content">
-          <p class="eyebrow">Personal Website</p>
-          <h1>Tang 的个人主页</h1>
-          <p class="hero-copy">
-            一个简洁、有质感的个人主页。
-          </p>
+          <p class="eyebrow" data-i18n="hero.eyebrow">Sitio personal</p>
+          <h1 data-i18n="hero.title">El espacio personal de Tang</h1>
+          <p class="hero-copy" data-i18n="hero.copy">Un espacio sencillo, cuidado y con personalidad.</p>
           <div class="hero-actions" aria-label="Hero actions">
-            <a class="button button-primary" href="#about">了解我</a>
-            <a class="button button-ghost" href="#contact">联系我</a>
+            <a class="button button-primary" href="#about" data-i18n="hero.about">Conóceme</a>
+            <a class="button button-ghost" href="#contact" data-i18n="hero.contact">Contáctame</a>
           </div>
         </div>
       </section>
 
       <section class="intro section" id="about">
-        <div class="section-label">About</div>
+        <div class="section-label" data-i18n="about.label">Sobre mí</div>
         <div class="intro-grid">
-          <h2>你好，我是 Tang。</h2>
+          <h2 data-i18n="about.title">Hola, soy Tang.</h2>
           <div class="intro-copy">
-            <p>
-              喜欢精致物件、清晰表达和有品质的生活方式。
-            </p>
+            <p data-i18n="about.copy">Me gustan los objetos bien diseñados, la comunicación clara y una vida con calidad.</p>
           </div>
         </div>
       </section>
@@ -65,30 +62,30 @@
           <a class="feature-card reveal" href="#watch-categories" data-show-section="watch-categories">
             <img src="relojes/图片_20260613123425_183_14.jpg" alt="A curated display of watches and leather accessories.">
             <div class="feature-body">
-              <h3>腕表</h3>
+              <h3 data-i18n="catalog.watches">Relojes</h3>
             </div>
           </a>
 
           <a class="feature-card reveal" href="#perfume-categories" data-show-section="perfume-categories">
             <img src="pefumes/图片_20260613123423_181_14.jpg" alt="A perfume bottle on richly colored textile with accessories.">
             <div class="feature-body">
-              <h3>香氛</h3>
+              <h3 data-i18n="catalog.perfumes">Perfumes</h3>
             </div>
           </a>
 
           <article class="feature-card reveal">
             <img src="图片_20260613123424_182_14.jpg" alt="A polished desk with technology accessories.">
             <div class="feature-body">
-              <h3>眼镜</h3>
+              <h3 data-i18n="catalog.glasses">Gafas</h3>
             </div>
           </article>
         </div>
 
-        <div class="repair-note reveal" role="note" aria-label="售后保障">
+        <div class="repair-note reveal" role="note" aria-label="Garantía posventa">
           <span class="repair-note-icon" aria-hidden="true">✓</span>
           <div>
-            <strong>免费维修</strong>
-            <span>售后有保障，选购更安心</span>
+            <strong data-i18n="service.repair">Reparación gratuita</strong>
+            <span data-i18n="service.copy">Compra con tranquilidad: tienes respaldo posventa</span>
           </div>
         </div>
       </section>
@@ -96,68 +93,68 @@
       <section class="category-section section is-hidden" id="watch-categories" aria-label="Watch categories" hidden>
         <div class="gallery-heading">
           <div>
-            <h2>腕表分类</h2>
+            <h2 data-i18n="watches.categories">Categorías de relojes</h2>
           </div>
           <p>
-            请选择男士、女士或儿童手表。
+            <span data-i18n="watches.choose">Elige relojes para hombre, mujer o niños.</span>
           </p>
         </div>
 
         <div class="category-grid">
           <a class="category-card reveal" href="#men-watches" data-show-section="men-watches">
-            <img src="relojes/nuevos/556cb64037866bf85a68fa5e66e7fcd2.jpg" alt="男士手表系列。">
+            <img src="relojes/nuevos/556cb64037866bf85a68fa5e66e7fcd2.jpg" alt="Colección de relojes para hombre.">
             <div class="feature-body">
-              <h3>男士手表</h3>
-              <p>价格见图片</p>
-              <span class="shipping-note">免费送货</span>
+              <h3 data-i18n="watches.men">Relojes para hombre</h3>
+              <p data-i18n="common.priceImage">Precio en la imagen</p>
+              <span class="shipping-note" data-i18n="common.shipping">Envío gratis</span>
             </div>
           </a>
 
           <a class="category-card reveal" href="#women-watches" data-show-section="women-watches">
             <img src="relojes/mujer/23277440e39c77dc7271a66f6e401bcf.jpg" alt="Women's watches category.">
             <div class="feature-body">
-              <h3>女士手表</h3>
+              <h3 data-i18n="watches.women">Relojes para mujer</h3>
               <p>$8900</p>
-              <span class="shipping-note">免费送货</span>
+              <span class="shipping-note" data-i18n="common.shipping">Envío gratis</span>
             </div>
           </a>
 
           <a class="category-card reveal" href="#kids-watches" data-show-section="kids-watches">
             <img src="relojes/ninos/43e87e38b3adee669a76db0e66838a4b.jpg" alt="Kids watches category.">
             <div class="feature-body">
-              <h3>儿童手表</h3>
+              <h3 data-i18n="watches.kids">Relojes para niños</h3>
               <p>$8900</p>
-              <span class="shipping-note">免费送货</span>
+              <span class="shipping-note" data-i18n="common.shipping">Envío gratis</span>
             </div>
           </a>
         </div>
       </section>
 
-      <section class="perfume-gallery section is-hidden" id="men-watches" aria-label="男士手表图片展示" hidden>
+      <section class="perfume-gallery section is-hidden" id="men-watches" aria-label="Galería de relojes para hombre" hidden>
         <div class="gallery-heading">
           <div>
-            <h2>男士手表</h2>
+            <h2 data-i18n="watches.men">Relojes para hombre</h2>
           </div>
           <p>
-            男士手表新品。价格见图片，免费送货。
+            <span data-i18n="watches.menCopy">Nuevos relojes para hombre. Precios en las imágenes y envío gratis.</span>
           </p>
         </div>
 
         <div class="perfume-grid">
           <article class="perfume-item perfume-item-large reveal">
-            <img src="relojes/nuevos/556cb64037866bf85a68fa5e66e7fcd2.jpg" alt="三款男士皮带手表，售价每款 13,900。">
+            <img src="relojes/nuevos/556cb64037866bf85a68fa5e66e7fcd2.jpg" alt="Tres relojes para hombre con correa, a 13.900 cada uno.">
           </article>
           <article class="perfume-item reveal">
-            <img src="relojes/nuevos/f057545bbbd0b394189e02e0a0c1f4a2.jpg" alt="三款男士皮带手表，售价每款 13,900。">
+            <img src="relojes/nuevos/f057545bbbd0b394189e02e0a0c1f4a2.jpg" alt="Tres relojes para hombre con correa, a 13.900 cada uno.">
           </article>
           <article class="perfume-item reveal">
-            <img src="relojes/nuevos/c5a096a61fead253c08295bf016a9e52.jpg" alt="四款男士金属表带手表，售价每款 14,900。">
+            <img src="relojes/nuevos/c5a096a61fead253c08295bf016a9e52.jpg" alt="Cuatro relojes para hombre con pulsera metálica, a 14.900 cada uno.">
           </article>
           <article class="perfume-item reveal">
-            <img src="relojes/nuevos/f3665c6337c2b9afb1448dd2da94cd01.jpg" alt="四款经典金色男士手表，售价每款 14,900。">
+            <img src="relojes/nuevos/f3665c6337c2b9afb1448dd2da94cd01.jpg" alt="Cuatro relojes dorados clásicos para hombre, a 14.900 cada uno.">
           </article>
           <article class="perfume-item reveal">
-            <img src="relojes/nuevos/10dd0c28ef2ede5ee904a09f8cd8ffe2.jpg" alt="四款金色男士手表，售价每款 16,900。">
+            <img src="relojes/nuevos/10dd0c28ef2ede5ee904a09f8cd8ffe2.jpg" alt="Cuatro relojes dorados para hombre, a 16.900 cada uno.">
           </article>
         </div>
 
@@ -166,10 +163,10 @@
       <section class="perfume-gallery section is-hidden" id="women-watches" aria-label="Women's watch gallery" hidden>
         <div class="gallery-heading">
           <div>
-            <h2>女士手表</h2>
+            <h2 data-i18n="watches.women">Relojes para mujer</h2>
           </div>
           <p>
-            女士手表图片展示。价格：$8900。免费送货。
+            <span data-i18n="watches.womenCopy">Colección de relojes para mujer. Precio: $8.900. Envío gratis.</span>
           </p>
         </div>
 
@@ -190,18 +187,18 @@
             <img src="relojes/mujer/d249e9142ff6b74f97a975e3c4643a49.jpg" alt="Women's four-watch set.">
           </article>
           <article class="perfume-item reveal">
-            <img src="relojes/nuevos/198bf1df4c65bfc9a9be573d4f081963.jpg" alt="三款女士金属表带手表，售价每款 13,900。">
+            <img src="relojes/nuevos/198bf1df4c65bfc9a9be573d4f081963.jpg" alt="Tres relojes para mujer con pulsera metálica, a 13.900 cada uno.">
           </article>
           <article class="perfume-item reveal">
-            <img src="relojes/nuevos/4286ea8df2e5865a3d1be83dc57d00d1.jpg" alt="两款女士数码手表，售价每款 9,990。">
+            <img src="relojes/nuevos/4286ea8df2e5865a3d1be83dc57d00d1.jpg" alt="Dos relojes digitales para mujer, a 9.990 cada uno.">
           </article>
         </div>
 
-        <div class="repair-note reveal" role="note" aria-label="女士手表售后保障">
+        <div class="repair-note reveal" role="note" aria-label="Garantía posventa para relojes de mujer">
           <span class="repair-note-icon" aria-hidden="true">✓</span>
           <div>
-            <strong>免费维修</strong>
-            <span>女士手表售后有保障，选购更安心</span>
+            <strong data-i18n="service.repair">Reparación gratuita</strong>
+            <span data-i18n="service.womenCopy">Los relojes para mujer incluyen respaldo posventa</span>
           </div>
         </div>
       </section>
@@ -209,10 +206,10 @@
       <section class="perfume-gallery section is-hidden" id="kids-watches" aria-label="Kids watch gallery" hidden>
         <div class="gallery-heading">
           <div>
-            <h2>儿童手表</h2>
+            <h2 data-i18n="watches.kids">Relojes para niños</h2>
           </div>
           <p>
-            儿童手表图片展示。价格：$8900。免费送货。
+            <span data-i18n="watches.kidsCopy">Colección de relojes para niños. Precio: $8.900. Envío gratis.</span>
           </p>
         </div>
 
@@ -224,7 +221,7 @@
             <img src="relojes/ninos/a4dc3f189a7eb02404461c73d2f22fa5.jpg" alt="Kids colorful analog watch collection.">
           </article>
           <article class="perfume-item reveal">
-            <img src="relojes/nuevos/fb131d44622ab282971efc4fd130056c.jpg" alt="四款彩色儿童手表，售价每款 10,900。">
+            <img src="relojes/nuevos/fb131d44622ab282971efc4fd130056c.jpg" alt="Cuatro relojes coloridos para niños, a 10.900 cada uno.">
           </article>
         </div>
       </section>
@@ -244,10 +241,10 @@
                 amor en cada aliento.
               </p>
               <button class="music-toggle" type="button" data-music-toggle aria-pressed="false">
-                Musica romantica
+                Música romántica
               </button>
             </div>
-            <h2>香水分类</h2>
+            <h2 data-i18n="perfumes.categories">Categorías de perfumes</h2>
           </div>
         </div>
 
@@ -255,18 +252,18 @@
           <a class="category-card reveal" href="#women-perfumes" data-show-section="women-perfumes">
             <img src="pefumes/perfumes de mujer/图片_20260614212539_187_14.jpg" alt="Women's perfume category.">
             <div class="feature-body">
-              <h3>女用香水</h3>
+              <h3 data-i18n="perfumes.women">Perfumes para mujer</h3>
               <p>$15900</p>
-              <span class="shipping-note">免费送货</span>
+              <span class="shipping-note" data-i18n="common.shipping">Envío gratis</span>
             </div>
           </a>
 
           <a class="category-card reveal" href="#men-perfumes" data-show-section="men-perfumes">
             <img src="pefumes/图片_20260613123423_181_14.jpg" alt="Men's perfume category.">
             <div class="feature-body">
-              <h3>男士香水</h3>
+              <h3 data-i18n="perfumes.men">Perfumes para hombre</h3>
               <p>$15900</p>
-              <span class="shipping-note">免费送货</span>
+              <span class="shipping-note" data-i18n="common.shipping">Envío gratis</span>
             </div>
           </a>
         </div>
@@ -275,10 +272,10 @@
       <section class="perfume-gallery section is-hidden" id="women-perfumes" aria-label="Women's perfume gallery" hidden>
         <div class="gallery-heading">
           <div>
-            <h2>女用香水</h2>
+            <h2 data-i18n="perfumes.women">Perfumes para mujer</h2>
           </div>
           <p>
-            精选香水图片展示。价格：$15900。免费送货。
+            <span data-i18n="perfumes.womenCopy">Selección de perfumes para mujer. Precio: $15.900. Envío gratis.</span>
           </p>
         </div>
 
@@ -313,10 +310,10 @@
       <section class="perfume-gallery section is-hidden" id="men-perfumes" aria-label="Men's perfume gallery" hidden>
         <div class="gallery-heading">
           <div>
-            <h2>男士香水</h2>
+            <h2 data-i18n="perfumes.men">Perfumes para hombre</h2>
           </div>
           <p>
-            男士香水图片展示。价格：$15900。免费送货。
+            <span data-i18n="perfumes.menCopy">Selección de perfumes para hombre. Precio: $15.900. Envío gratis.</span>
           </p>
         </div>
 
@@ -354,9 +351,9 @@
       <section class="contact section" id="contact">
         <div class="contact-panel">
           <div>
-            <div class="section-label">Contact</div>
-            <h2>联系我</h2>
-            <p>欢迎交流。</p>
+            <div class="section-label" data-i18n="contact.label">Contacto</div>
+            <h2 data-i18n="contact.title">Contáctame</h2>
+            <p data-i18n="contact.copy">Será un gusto conversar contigo.</p>
           </div>
           <div class="contact-links" aria-label="Contact links">
             <a href="mailto:tangsheng558@gmail.com">tangsheng558@gmail.com</a>
@@ -368,7 +365,7 @@
 
     <footer class="footer">
       <span>2026 Tang</span>
-      <a href="#home">回到顶部</a>
+      <a href="#home" data-i18n="footer.top">Volver arriba</a>
     </footer>
 
     <div class="image-lightbox" data-lightbox hidden>
@@ -383,6 +380,6 @@
       </div>
     </div>
 
-    <script src="script.js?v=image-pan-3"></script>
+    <script src="script.js?v=language-es-1"></script>
   </body>
 </html>
