@@ -5,6 +5,7 @@ const toggleSections = document.querySelectorAll("#watch-categories, #men-watche
 const musicToggle = document.querySelector("[data-music-toggle]");
 const galleryImages = document.querySelectorAll(".perfume-grid img");
 const lightbox = document.querySelector("[data-lightbox]");
+const lightboxStage = document.querySelector(".lightbox-stage");
 const lightboxImage = document.querySelector("[data-lightbox-image]");
 const lightboxClose = document.querySelector("[data-lightbox-close]");
 const zoomInButton = document.querySelector("[data-zoom-in]");
@@ -16,6 +17,7 @@ romanticAudio.preload = "auto";
 romanticAudio.volume = 0.58;
 let isMusicPlaying = false;
 let lightboxZoom = 1;
+let lightboxPan = null;
 
 const updateHeader = () => {
   header.classList.toggle("is-scrolled", window.scrollY > 20);
@@ -57,6 +59,7 @@ const applyLightboxZoom = () => {
 
   lightboxImage.style.setProperty("--zoom", lightboxZoom.toFixed(2));
   zoomResetButton.textContent = `${Math.round(lightboxZoom * 100)}%`;
+  lightbox?.classList.toggle("is-zoomed", lightboxZoom > 1);
 };
 
 const setLightboxZoom = (zoom) => {
@@ -80,6 +83,8 @@ const closeLightbox = () => {
   lightbox.hidden = true;
   lightboxImage.src = "";
   lightboxImage.alt = "";
+  lightboxPan = null;
+  lightbox.classList.remove("is-dragging");
   setLightboxZoom(1);
   document.body.classList.remove("lightbox-open");
 };
@@ -142,14 +147,48 @@ if (zoomOutButton) {
 if (zoomResetButton) {
   zoomResetButton.addEventListener("click", () => setLightboxZoom(1));
 }
-if (lightbox) {
-  lightbox.addEventListener("wheel", (event) => {
+if (lightboxStage) {
+  lightboxStage.addEventListener("wheel", (event) => {
     if (lightbox.hidden) return;
 
-    event.preventDefault();
-    const zoomStep = event.deltaY < 0 ? 0.15 : -0.15;
-    setLightboxZoom(lightboxZoom + zoomStep);
+    if (event.ctrlKey) {
+      event.preventDefault();
+      const zoomStep = event.deltaY < 0 ? 0.15 : -0.15;
+      setLightboxZoom(lightboxZoom + zoomStep);
+    }
   }, { passive: false });
+
+  lightboxStage.addEventListener("pointerdown", (event) => {
+    if (lightboxZoom <= 1 || event.button !== 0) return;
+
+    event.preventDefault();
+    lightboxPan = {
+      pointerId: event.pointerId,
+      startX: event.clientX,
+      startY: event.clientY,
+      scrollLeft: lightboxStage.scrollLeft,
+      scrollTop: lightboxStage.scrollTop,
+    };
+    lightboxStage.setPointerCapture(event.pointerId);
+    lightbox.classList.add("is-dragging");
+  });
+
+  lightboxStage.addEventListener("pointermove", (event) => {
+    if (!lightboxPan || lightboxPan.pointerId !== event.pointerId) return;
+
+    lightboxStage.scrollLeft = lightboxPan.scrollLeft - (event.clientX - lightboxPan.startX);
+    lightboxStage.scrollTop = lightboxPan.scrollTop - (event.clientY - lightboxPan.startY);
+  });
+
+  const stopLightboxPan = (event) => {
+    if (!lightboxPan || lightboxPan.pointerId !== event.pointerId) return;
+
+    lightboxPan = null;
+    lightbox.classList.remove("is-dragging");
+  };
+
+  lightboxStage.addEventListener("pointerup", stopLightboxPan);
+  lightboxStage.addEventListener("pointercancel", stopLightboxPan);
 }
 window.addEventListener("keydown", (event) => {
   if (event.key === "Escape" && lightbox && !lightbox.hidden) {
