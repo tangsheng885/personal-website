@@ -29,7 +29,7 @@ const translations = {
     "nav.catalog": "Catálogo",
     "nav.contact": "Contacto",
     "hero.eyebrow": "Sitio personal",
-    "hero.title": "El espacio personal de C.T.Luxe",
+    "hero.title": "El espacio personal de C.T.",
     "hero.copy": "Un espacio sencillo, cuidado y con personalidad.",
     "hero.about": "Conóceme",
     "hero.contact": "Contáctame",
