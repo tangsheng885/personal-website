@@ -544,6 +544,39 @@ h3 {
   background: var(--paper-strong);
 }
 
+.watch-numbered {
+  position: relative;
+}
+
+.watch-number-strip {
+  position: absolute;
+  right: 6%;
+  bottom: 12%;
+  left: 6%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  pointer-events: none;
+}
+
+.watch-number-strip li {
+  width: clamp(28px, 3.4vw, 40px);
+  aspect-ratio: 1;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(70, 61, 52, 0.3);
+  border-radius: 2px;
+  color: #3d342c;
+  background: rgba(235, 222, 202, 0.94);
+  box-shadow: 0 4px 12px rgba(29, 22, 17, 0.18);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(18px, 2.2vw, 28px);
+  line-height: 1;
+}
+
 .perfume-item-large {
   grid-column: span 2;
   grid-row: span 2;
